@@ -136,11 +136,11 @@ variable to access the resource later instead of using the dictionary notation m
 
         # WRONG way: This will overwrite your modified version of the
         #            resource with a fresh copy!
-        fh = open(datadir_copy["data.txt"], "rb")
+        fh = datadir_copy["data.txt"].open("rb")
 
         # CORRECT way: This will let you access the modified version
         #              of the resource.
-        fh = open(resource1, "rb")
+        fh = resource1.open("rb")
 
 
 .. _pytest: http://pytest.org/

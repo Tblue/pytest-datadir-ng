@@ -181,10 +181,10 @@ def datadir_copy(request, tmpdir):
 
             # WRONG way: This will overwrite your modified version of the
             #            resource with a fresh copy!
-            fh = open(datadir_copy["data.txt"], "rb")
+            fh = datadir_copy["data.txt"].open("rb")
 
             # CORRECT way: This will let you access the modified version
             #              of the resource.
-            fh = open(resource1, "rb")
+            fh = resource1.open("rb")
     """
     return _DatadirCopy(request, tmpdir)
