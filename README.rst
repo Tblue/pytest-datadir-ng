@@ -142,6 +142,14 @@ variable to access the resource later instead of using the dictionary notation m
         #              of the resource.
         fh = resource1.open("rb")
 
+Version history
+---------------
+
+Version 1.0.0
++++++++++++++
+
+- Initial release
+
 
 .. _pytest: http://pytest.org/
 .. _pytest-datadir plugin: https://github.com/gabrielcnr/pytest-datadir
