@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name="pytest-datadir-ng",
-    version="1.0.0",
+    use_scm_version=True,
     description="Fixtures for pytest allowing test functions/methods to easily retrieve test "
                 "resources from the local filesystem.",
     # Read the long description from our README.rst file, as UTF-8.
@@ -24,9 +24,9 @@ setup(
         ]
     },
     url="https://github.com/Tblue/pytest-datadir-ng",
-    download_url="https://github.com/Tblue/pytest-datadir-ng/archive/v1.0.0.tar.gz",
     py_modules=["pytest_datadir_ng"],
     install_requires=["pytest"],
+    setup_requires=["setuptools_scm ~= 1.10"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",

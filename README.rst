@@ -145,6 +145,12 @@ variable to access the resource later instead of using the dictionary notation m
 Version history
 ---------------
 
+Version 1.0.1
++++++++++++++
+
+- Added this `Version history`_ section. :-)
+- Fixed bad usage of py.path.local_ objects in code examples.
+
 Version 1.0.0
 +++++++++++++
 
