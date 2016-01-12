@@ -1,5 +1,5 @@
-datadir-ng plugin for pytest
-============================
+datadir-ng plugin for pytest |pypi-badge|
+=========================================
 
 The ``datadir-ng`` plugin for pytest_ provides the ``datadir``
 and ``datadir_copy`` fixtures which allow test functions to easily access resources
@@ -156,6 +156,15 @@ Version 1.0.0
 
 - Initial release
 
+
+..
+    NB: Without a trailing question mark in the following image URL, the
+        generated HTML will contain an <object> element instead of an <img>
+        element, which apparently cannot be made into a link (i. e. a
+        "clickable" image).
+.. |pypi-badge| image:: https://img.shields.io/pypi/v/pytest-datadir-ng.svg?
+    :align: middle
+    :target: https://pypi.python.org/pypi/pytest-datadir-ng
 
 .. _pytest: http://pytest.org/
 .. _pytest-datadir plugin: https://github.com/gabrielcnr/pytest-datadir
