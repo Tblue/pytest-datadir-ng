@@ -36,15 +36,22 @@ import pytest
 class _Datadir(object):
     def __init__(self, request):
         basedir = request.fspath.dirpath()
-        testdir = basedir.join(request.module.__name__)
+        datadir = basedir.join("data")
 
-        self._datadirs = [testdir, basedir.join("data")]
+        self._datadirs = []
 
-        if request.cls is not None:
-            clsdir = testdir.join(request.cls.__name__)
-            self._datadirs[:0] = [clsdir.join(request.function.__name__), clsdir]
-        else:
-            self._datadirs.insert(0, testdir.join(request.function.__name__))
+        for d in (basedir, datadir):
+            testdir = d.join(request.module.__name__)
+            if request.cls is not None:
+                clsdir = testdir.join(request.cls.__name__)
+                self._datadirs.extend([
+                    clsdir.join(request.function.__name__),
+                    clsdir
+                ])
+            else:
+                self._datadirs.append(testdir.join(request.function.__name__))
+            self._datadirs.append(testdir)
+        self._datadirs.append(datadir)
 
     def __getitem__(self, path):
         for datadir in self._datadirs:
@@ -121,6 +128,8 @@ def datadir(request):
 
     - ``tests/test_one/test_func/``
     - ``tests/test_one/``
+    - ``tests/data/test_one/test_func/``
+    - ``tests/data/test_one/``
     - ``tests/data/``
 
     The path to the first existing file (or directory) is returned as a
@@ -134,6 +143,9 @@ def datadir(request):
     - ``tests/test_two/TestClass/test_method/``
     - ``tests/test_two/TestClass/``
     - ``tests/test_two/``
+    - ``tests/data/test_two/TestClass/test_method/``
+    - ``tests/data/test_two/TestClass/``
+    - ``tests/data/test_two/``
     - ``tests/data/``
 
     Here, this would return the path
