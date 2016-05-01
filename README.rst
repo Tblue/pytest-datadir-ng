@@ -150,6 +150,11 @@ variable to access the resource later instead of using the dictionary notation m
 Version history
 ---------------
 
+Version 1.1.0
++++++++++++++
+
+- Allow per-test directories under ``data/`` (thanks, Alexander Lukanin).
+
 Version 1.0.1
 +++++++++++++
 
