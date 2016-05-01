@@ -75,6 +75,8 @@ in this order:
 
 - ``tests/test_one/test_func/``
 - ``tests/test_one/``
+- ``tests/data/test_one/test_func/``
+- ``tests/data/test_one/``
 - ``tests/data/``
 
 The path to the first existing file (or directory) is returned as a
@@ -88,6 +90,9 @@ the following directories are searched for a file or directory with the name
 - ``tests/test_two/TestClass/test_method/``
 - ``tests/test_two/TestClass/``
 - ``tests/test_two/``
+- ``tests/data/test_two/TestClass/test_method/``
+- ``tests/data/test_two/TestClass/``
+- ``tests/data/test_two/``
 - ``tests/data/``
 
 Here, this would return the path
