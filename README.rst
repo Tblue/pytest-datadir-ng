@@ -153,7 +153,7 @@ Version history
 Version 1.1.1
 +++++++++++++
 
-- Add a `LICENSE` file (fixes #3).
+- Add a ``LICENSE`` file (fixes #3).
 
 Version 1.1.0
 +++++++++++++
