@@ -150,6 +150,11 @@ variable to access the resource later instead of using the dictionary notation m
 Version history
 ---------------
 
+Version 1.1.1
++++++++++++++
+
+- Add a `LICENSE` file (fixes #3).
+
 Version 1.1.0
 +++++++++++++
 
