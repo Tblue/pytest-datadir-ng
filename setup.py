@@ -26,7 +26,7 @@ setup(
     url="https://github.com/Tblue/pytest-datadir-ng",
     py_modules=["pytest_datadir_ng"],
     install_requires=["pytest"],
-    setup_requires=["setuptools_scm ~= 1.10"],
+    setup_requires=["setuptools_scm ~= 6.0"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
