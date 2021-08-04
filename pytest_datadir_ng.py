@@ -200,3 +200,39 @@ def datadir_copy(request, tmpdir):
             fh = resource1.open("rb")
     """
     return _DatadirCopy(request, tmpdir)
+
+
+@pytest.fixture
+def datadir_class(request, datadir):
+    """Uses to set a ``client`` class attribute to the datadir::
+
+        @pytest.mark.usefixtures('datadir_class')
+        class TestFileThing:
+
+            def get_foo_file(self):
+                return self.datadir["foo.txt"]
+
+            def test_login(self):
+                assert os.path.exists(self.get_foo_file())
+
+    """
+    if request.cls is not None:
+        request.cls.datadir = datadir
+
+
+@pytest.fixture
+def datadir_copy_class(request, datadir_copy):
+    """Uses to set a ``client`` class attribute to the datadir_copy::
+
+        @pytest.mark.usefixtures('datadir_copy_class')
+        class TestFileThing:
+
+            def get_foo_file(self):
+                return self.datadir_copy["foo.txt"]
+
+            def test_login(self):
+                assert os.path.exists(self.get_foo_file())
+
+    """
+    if request.cls is not None:
+        request.cls.datadir_copy = datadir_copy
